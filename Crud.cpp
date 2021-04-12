@@ -45,7 +45,7 @@ using namespace std;
 				conexion.conectar("localhost","root","","db_empresa");
 				char *consulta;
 				char sentencia[]="INSERT INTO ALUMNO (ID,NOMBRE,PATERNO) VALUES (\'%s\',\'%s\',\'%s\')";
-				consulta=new char[strlen(sentencia)+sizeof(stalumno)]-sizeof(int);
+				consulta=new char[strlen(sentencia)+sizeof(stmarca)]-sizeof(int);
 				sprintf(consulta,sentencia,id.marca, marcas);
 				int aux=mysql_query(conexion.obj,consulta);
 				if(!aux==0){
@@ -154,13 +154,13 @@ using namespace std;
 	void menu(){
 		int opcion;
 		clalumno op;
-		cout<<"Presentado por: Fredy López\n";
+		cout<<"Presentado por: Fredy LÃ³pez\n";
 		do{
 		cout<<"---------------------------------------------------------------\n";
 		cout<<"                  +------------------------+"<<endl;
 		cout<<"                  |          Menu          |"<<endl;
 		cout<<"                  +------------------------+"<<endl;
-		cout<<"                  | Seleccione una Opción  |"<<endl;
+		cout<<"                  | Seleccione una OpciÃ³n  |"<<endl;
 		cout<<"                  | 1.- Crear Registros    |"<<endl;
 		cout<<"                  | 2.- Eliminar Registros |"<<endl;
 		cout<<"                  | 3.- Modificar Registros|"<<endl;
@@ -185,7 +185,7 @@ using namespace std;
 				
 				case 2:		
 					clalumno op;
-					cout<<"Ingrese Código  a Eliminar: ";
+					cout<<"Ingrese CÃ³digo  a Eliminar: ";
 					cin>>alu.id;
 					op.eliminar(alu);
 					cout<<op.resultado;
@@ -195,7 +195,7 @@ using namespace std;
 					cout<<"Modificar Datos \n";
 					cout<<"Ingrese ID : ";
 					cin>>alu.id;
-					cout<<"\nModificará Registros con ID "<<alu.id<<endl;
+					cout<<"\nModificarÃ¡ Registros con ID "<<alu.id<<endl;
 					cout<<"\nIngrese Nuevo Nombre: ";
 					cin>>alu.nombre;
 					cout<<"Ingrese Nuevo Apellido Paterno: ";
@@ -211,7 +211,7 @@ using namespace std;
 				case 5: salir();
 				break;
 				default:
-				cout<<"Opción Incorrecta\n";	
+				cout<<"OpciÃ³n Incorrecta\n";	
 		}
 	}while(opcion!=5);
 	}
